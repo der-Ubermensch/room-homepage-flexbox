@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="./js/script.js"></script>
   
   <title>Frontend Mentor | Room homepage</title>
 
@@ -24,6 +25,7 @@
     <div class="top-flex-container">
 
       <div class="slider" id="1">
+
         <div id="flex-item-top" class="top-slider">
 
           <div class="navbar">
@@ -32,17 +34,16 @@
             </div>
     
             <div class="dropdown">
-              <img src="./images/icon-hamburger.svg" class="dropicon"/>
-              <div class="dropdown-content">
-                <a href="#">Home</a>
-                <a href="#">Shop</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+              <img id="icon-img" src="/images/icon-hamburger.svg" class="dropicon" 
+              onclick="openMenu('/images/icon-hamburger.svg', '/images/icon-close.svg')"/>
+              <div id="dropdown-content">
+                <a href="#">Home</a><!--
+             --><a href="#">Shop</a><!--
+             --><a href="#">About</a><!--
+             --><a href="#">Contact</a>
               </div>
             </div>
           </div>
-          <!-- <img class="mySlides"/> -->
-          <!-- <p>heyhey</p> -->
         
           <div class="arrows">
             <img src="./images/icon-angle-left.svg" />
@@ -60,6 +61,7 @@
           </p>
           <h6>Shop now</h6>
         </div>
+
       </div>
       <!-- <div class="slider" id="2">
         <div class="flex-item-top">
@@ -116,6 +118,7 @@
     </div>
   
   </div>
+ 
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">der-Ubermensch</a>.
