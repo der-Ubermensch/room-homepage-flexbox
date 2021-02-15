@@ -44,3 +44,10 @@ Feel free to use any workflow that you feel comfortable with. Below is a suggest
 7. If you'd like to try making your project fully responsive, we'd recommend checking out [Sizzy](https://bit.ly/fm-sizzy). It's a great browser that makes it easy to view your site across multiple devices.
 
 **Have fun building!** 🚀
+
+## Section overview
+These are the comparisons of the provided layouts and the results on mobile.
+
+Design preview                    | Phone Layout                      | Lower-section                        | Navbar
+:--------------------------------:|:---------------------------------:|:------------------------------------:|:------------------------------:
+![](./design/mobile-design.jpg) | ![](./project-Images/phoneHero.png) | ![](./project-Images/phoneLower.png)  | ![](./project-Images/phoneNav.png)
