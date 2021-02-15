@@ -13,10 +13,10 @@
   <title>Frontend Mentor | Room homepage</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <!-- <style>
+  <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style> -->
+  </style>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 
       <div class="slider" id="1">
 
-        <div id="flex-item-top" class="top-slider">
+        <div id="flex-item-top" class="top-slider" >
 
           <div class="navbar">
             <div class="title">
@@ -46,13 +46,15 @@
           </div>
         
           <div class="arrows">
-            <img src="./images/icon-angle-left.svg" />
-            <img src="./images/icon-angle-right.svg" />
+            <img src="./images/icon-angle-left.svg" onclick="plusDivs(1); scrolly(-1)"/>
+
+            <img src="./images/icon-angle-right.svg" onclick="plusDivs(-1); scrolly(1)"/>
           </div>
         
         </div>
 
-        <div id="flex-item-bottom" class="top-slider">
+
+        <div id="flex-item-bottom" class="mySlides">
           <h2>Discover innovative ways to decorate</h2>
           <p>
             We provide unmatched quality, comfort, and style for property owners across the country. 
@@ -62,36 +64,28 @@
           <h6>Shop now</h6>
         </div>
 
-      </div>
-      <!-- <div class="slider" id="2">
-        <div class="flex-item-top">
-          <img class="mySlides">
-        </div>
-        <div class="flex-item-top">
+        <div id="flex-item-bottom" class="mySlides" style="display: none;">
           <h2>We are available all across the globe</h2>
           <p>
             With stores all over the world, it's easy for you to find furniture for your home or place of business. 
             Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
             store locator. Any questions? Don't hesitate to contact us today.
           </p>
-          <h4>Shop now</h4>
+          <h6>Shop now</h6>
         </div>
-      </div> -->
-      <!-- <div class="slider" id="3">
-        <div class="flex-item-top">
-          <img class="mySlides">
-        </div>
-        <div class="flex-item-top">
+    
+        <div id="flex-item-bottom" class="mySlides" style="display: none;">
           <h2>Manufactured with the best materials</h2>
           <p>
             Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
             to ensure that every product is made as perfect and as consistent as possible. With three decades of 
             experience in this industry, we understand what customers want for their home and office.
           </p>
-          <h4>Shop now</h4>
+          <h6>Shop now</h6>
         </div>
-      </div> -->
-      
+
+      </div>
+    
     </div>
 
     <div class="bottom-flex-container">
@@ -119,9 +113,9 @@
   
   </div>
  
-  <!-- <div class="attribution">
+  <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">der-Ubermensch</a>.
-  </div> -->
+    Coded by <a href="https://github.com/der-Ubermensch/">der-Ubermensch</a>.
+  </div>
 </body>
 </html>

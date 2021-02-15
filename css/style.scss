@@ -13,11 +13,10 @@ $desktop: 768px;
 $phone: 400px;
 
 @mixin desktop {
-    @media (min-width: #{$desktop}) {
-        @content;
-    }
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
 }
-
 
 html,
 body {
@@ -29,9 +28,9 @@ body {
   font-size: 12px;
   line-height: 1.5;
   box-sizing: border-box;
-  
+
   @include desktop {
-    overflow-y: hidden;
+    //overflow-y: hidden;
 
     .main-container {
       display: flex;
@@ -39,27 +38,21 @@ body {
       //align-items: flex-start;
     }
   }
-
 }
 
 /*_____________________________________TOP_FLEX_CONTAINER__________________________________________*/
 
 .top-flex-container {
-  //display: flex;
+  display: flex;
   //background-color: chartreuse;
-  
 }
 
 @include desktop {
-
-  .top-flex-container{
-    overflow-y: hidden;
+  .top-flex-container {
     //background-color: pink;
-    //height: 58vh;
-    border: black;
-    //flex-basis: 0;
+    justify-content: flex-end;
+    height: 67%;
   }
-  
 }
 
 // ------------------------------------------------------------------------SLIDER
@@ -68,11 +61,11 @@ body {
   flex-direction: column;
 }
 
-@include desktop { 
+@include desktop {
   .slider {
     flex-direction: row;
-    justify-content: flex-start;
-    //align-items: baseline; 
+    //justify-content: flex-start;
+    //align-items: baseline;
   }
 }
 
@@ -89,21 +82,20 @@ body {
 }
 
 @include desktop {
-
   #flex-item-top {
     background-image: url(../images/desktop-image-hero-1.jpg);
-    //overflow: hidden;
-    background-size: contain;
-    padding-bottom: 157%;
-    //flex-basis: 3;
-    //float: right;
+    background-size: 100% 100%;
+    height: 67vh;
+    //height: 65vh;
+    padding-bottom: 0;
+    //width: 58%;
+    width: 68%
+    //background-color: red;
   }
-
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>ARROWS
 .arrows {
-  //background-color: blue;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -119,15 +111,19 @@ body {
   img:hover {
     background-color: lighten(col("Black"), 10%);
   }
-
 }
 
 @include desktop {
-    .arrows {
-      position: relative;
-      top: 0;
-      right: 10;
-    }
+  .arrows {
+    //background-color: green;
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+    cursor:pointer;
+
+
+    img{ width: 15%; padding: 1.5em;}
+  }
 }
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>NAVBAR
 .navbar {
@@ -149,17 +145,28 @@ body {
     display: flex;
     justify-content: center;
   }
-  
+
+  @include desktop {
+      .title {
+        justify-content: flex-start;
+        //cursor: crosshair;
+      }
+  }
 
   .dropdown {
     display: flex;
-
 
     .dropicon {
       //background-color: green;
       padding: 10px;
       cursor: pointer;
       z-index: 2;
+    }
+
+    @include desktop {
+      .dropicon {
+        display: none;
+      }
     }
 
     #dropdown-content {
@@ -177,7 +184,18 @@ body {
       right: 0px;
       top: 0px;
       left: 0;
+    }
+
+    @include desktop {
+      #dropdown-content {
+        display: block;
+        background-color: transparent;
+        padding-left: 12.5%;
+        width: 50%;
+        position: absolute;
+        box-shadow: none;
       }
+    }
 
     #dropdown-content a {
       color: col("Very Dark Gray");
@@ -190,91 +208,98 @@ body {
 
       @media screen and (max-width: $phone) {
         left: 0;
-        font-size: .8rem;
+        font-size: 0.8rem;
+      }
+
+      @include desktop {
+        color: #fff;
+        margin-left: 20px;
       }
     }
 
     #dropdown-content a:hover {
       background-color: #f1f1f1;
     }
+
+    @include desktop {
+      #dropdown-content a:hover {
+        background-color: transparent;
+        background-image: linear-gradient(to right, #fff, #fff);
+        background-position: 50% 100%; 
+        //background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: 50% 3px;
+        
+      }
+    }
   }
 
-  // .dropdown:hover .dropdown-content {
-  //   display: flex;
-  //   justify-content: center;
-  //   //align-items: center;
-  //   text-transform: lowercase;
-  //   font-weight: 700;
-  //   //width: 100vw;
-  //   position: absolute;
-  //   //right: -70px;
-  //   //flex-wrap: wrap-reverse;
-  //   //z-index: 2;
-  // }
-
-  // .dropdown:hover .dropicon {
-  //   //background-color: blue;
-  //   //color: #fff;
-  //   align-self: flex-end;
-  //   display: none;
-  //   background-image: url(../images/icon-close.svg);
-  //   background-repeat: no-repeat;
-  //   //position: relative;
-  //   z-index: 2;
-  //   //padding: 30px;
-
-  // }
 }
 
 // ================================================FLEX-ITEM: BOTTOM
-#flex-item-bottom{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 32.5px;
+//.mySlides {display:none;}
 
-    p {
-      color: hsl(0, 0%, 63%);
-    }
+#flex-item-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 32.5px;
 
-    h6 {
-      text-transform: uppercase;
-      letter-spacing: 15px;
-      align-self: flex-start;
-      font-size: 1em;
-      //background-color: pink; 
-    }
+  p {
+    color: hsl(0, 0%, 63%);
+  }
 
-    h6:after {
-      content: url("../images/icon-arrow.svg");
-      padding-left: 3em;
-    }
+  h6 {
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    align-self: flex-start;
+    font-size: 1em;
+    //background-color: pink;
+  }
+
+  h6:after {
+    content: url("../images/icon-arrow.svg");
+    padding-left: 3em;
+  }
 }
 
 @include desktop {
-  #flex-item-bottom {
-  //background-image: url(../images/desktop-image-hero-1.jpg);
-  // background-repeat: no-repeat;
-  flex-basis: 1;
-  //overflow-y: hidden;
-  //background-color: yellow;
-  //height: 350px;
-  //float: right;
-  } 
+  #flex-item-bottom  {
+    //background-color: yellow;
+    //width: 42%;
+    width: 32%;
+    margin: 0px;
+    padding: 50px 89px;
+
+    h6:hover{ 
+      color: lighten(col("Black"), 45%); 
+      cursor: pointer;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: normal;
+      align-self: flex-start;
+    }
+  }
 }
 /*__________________________________BOTTOM_FLEX_CONTAINER__________________________________________*/
 
-.bottom-flex-container {
-  
-}
+// .bottom-flex-container {
+// }
 
 @include desktop {
   .bottom-flex-container {
+    //background-color: chocolate;
     display: flex;
-    background-color: chocolate;
-    //height: 42vh;
-    //position: absolute;
-   // flex-direction: row;
+    //flex-basis: 40vh;
+    height: 33%;
+  }
+
+  #mid-item {
+    //background-color: cornsilk;
+    //flex-basis: 45%;
   }
 }
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>BOTTOM_CONTAINER_ITEM
@@ -282,11 +307,24 @@ body {
   padding: 10px 0;
 
   .fixed-imgs {
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
   }
+}
 
+@include desktop {
+  .bottom-container-item {
+    //background: crimson;
+    padding: 0;
+    //height: 100%;
+
+    .fixed-imgs {
+      height: 100%;
+      //width: 33.25vw;
+      width: 33.25vw;
+    }
+  }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>MID_ITEM
@@ -297,14 +335,9 @@ body {
     text-transform: uppercase;
     letter-spacing: 6px;
     font-size: 1em;
-  } 
+  }
 
   p {
     color: hsl(0, 0%, 55%);
   }
-
 }
-
-
-
-
